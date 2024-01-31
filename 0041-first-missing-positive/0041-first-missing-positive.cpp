@@ -7,7 +7,7 @@ public:
             if (nums[i] > 0) {
                 if (nums[i] == current) {
                      while (i + 1 < nums.size() && nums[i] == nums[i + 1]) {
-                        i++;  // Skip duplicates
+                        i++;  
                     }
                     current++;
                 } else {
