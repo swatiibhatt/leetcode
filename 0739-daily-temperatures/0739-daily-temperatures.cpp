@@ -1,9 +1,9 @@
 class Solution {
 public:
-    std::vector<int> dailyTemperatures(std::vector<int>& temp) {
+   vector<int> dailyTemperatures(vector<int>& temp) {
         int n = temp.size();
-        std::vector<int> ans(n, 0);  // Initialize the result vector with zeros
-        std::stack<int> indices;  // Stack to store indices
+        vector<int> ans(n, 0); 
+        stack<int> indices; 
 
         for (int i = 0; i < n; ++i) {
             while (!indices.empty() && temp[i] > temp[indices.top()]) {
