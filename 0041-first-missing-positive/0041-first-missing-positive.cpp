@@ -15,7 +15,6 @@ public:
                 }
             }
         }
-       // current+=1;
         return current;
     }
 };
