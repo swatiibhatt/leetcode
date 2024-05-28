@@ -15,11 +15,7 @@ class Solution {
     }
 public:
     int numIslands(vector<vector<char>>& grid) {
-        
-        //For FAST I/O
-      //  ios_base::sync_with_stdio(false);
-    //    cin.tie(NULL);
-        
+ 
         int rows = grid.size();
         if(rows==0)     //Empty grid boundary case
             return 0;
