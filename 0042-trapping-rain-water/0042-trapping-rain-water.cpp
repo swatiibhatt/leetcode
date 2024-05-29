@@ -1,31 +1,24 @@
-class Solution {
+class Solution { // 0 ms, faster than 100.00%
 public:
-    int trap(std::vector<int>& height) {
-        int n = height.size();
-        if (n <= 2) return 0;
-        
-        int left = 0, right = n - 1;
-        int res = 0;
-        int maxleft = 0, maxright = 0;
-        
+    int trap(vector<int>& height) {
+        if (height.size() <= 2) return 0;
+        int n = height.size(), maxLeft = height[0], maxRight = height[n-1];
+        int left = 1, right = n - 2, ans = 0;
         while (left <= right) {
-            if (height[left] <= height[right]) {
-                if (height[left] >= maxleft) 
-                    maxleft = height[left];
-                else 
-                    res += maxleft - height[left];
-                
-                left++;
+            if (maxLeft < maxRight) {
+                if (height[left] > maxLeft)
+                    maxLeft = height[left];
+                else
+                    ans += maxLeft - height[left];
+                left += 1;
             } else {
-                if (height[right] >= maxright) 
-                    maxright = height[right];
-                else 
-                    res += maxright - height[right];
-                
-                right--;
+                if (height[right] > maxRight)
+                    maxRight = height[right];
+                else
+                    ans += maxRight - height[right];
+                right -= 1;
             }
         }
-        
-        return res;
+        return ans;
     }
 };
